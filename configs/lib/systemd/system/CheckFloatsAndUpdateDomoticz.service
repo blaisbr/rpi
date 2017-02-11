@@ -1,0 +1,13 @@
+[Unit]
+Description=Check floats connected to some gpio and then update domoticz switchs Service
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python -u /home/pi/scripts/CheckFloatsAndUpdateDomoticz.py
+User=pi
+WorkingDirectory=/home/pi/scripts
+StandardOutput=syslog+console
+
+[Install]
+WantedBy=multi-user.target
